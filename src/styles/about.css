@@ -1,0 +1,117 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* About Section */
+.about {
+  padding: 70px 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Heading - CENTERED */
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #000;
+  text-align: center;
+}
+
+/* Content Wrapper (L-SHAPE HERE) */
+.about-wrapper {
+  position: relative;
+  padding: 40px;
+  display: flex;
+  justify-content: center; /* CENTER CONTENT */
+}
+
+/* L Shapes */
+.about-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  border-top: 3px solid #000;
+  border-left: 3px solid #000;
+}
+
+.about-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 26px;
+  height: 26px;
+  border-bottom: 3px solid #000;
+  border-right: 3px solid #000;
+}
+
+/* Content */
+.about-content {
+  max-width: 650px;
+  text-align: center; /* CENTER CONTENT */
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: #000;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .about {
+    padding: 60px 35px;
+  }
+
+  .about-wrapper {
+    padding: 35px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about {
+    padding: 50px 15px;
+  }
+
+  .about-wrapper {
+    padding: 30px 20px;
+  }
+
+  .about-wrapper::before,
+  .about-wrapper::after {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
+  }
+
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    text-align: center;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .about {
+    padding: 45px 10px;
+  }
+}

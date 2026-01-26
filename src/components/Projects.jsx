@@ -1,0 +1,119 @@
+import { motion } from "framer-motion";
+import { FaGithub, FaFileAlt } from "react-icons/fa";
+import resumePDF from "../assets/resume.pdf";
+import "../styles/projects.css";
+
+export default function Projects() {
+  const projects = [
+    {
+      title: "Typing Speed Test",
+      description:
+        "React.js and CSS based application with real-time speed and accuracy tracking.",
+      image:
+        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop",
+      tech: ["React", "CSS", "JavaScript"],
+      github: "https://github.com/Sufyan5423/Typing-Speed",
+    },
+    {
+      title: "Expense Tracker",
+      description:
+        "Expense tracking app with authentication using React, Node.js, and MySQL.",
+      image:
+        "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=250&fit=crop",
+      tech: ["Node.js", "MySQL", "Express"],
+      github: "https://github.com/Sufyan5423/Expense-Tracker",
+    },
+    {
+      title: "Portfolio Dashboard",
+      description:
+        "Modern responsive portfolio with animations and clean UI.",
+      image:
+        "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop",
+      tech: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/Sufyan5423/Portfolio",
+    },
+    {
+      title: "Business Dashboard",
+      description:
+        "Analytics dashboard with charts and structured data presentation.",
+      image:
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+      tech: ["React", "Charts"],
+      github: "#",
+    },
+    {
+      title: "Learning Tracker",
+      description:
+        "Track skills, learning progress, and milestones.",
+      image:
+        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop",
+      tech: ["React", "UI/UX"],
+      github: "#",
+    },
+  ];
+
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = resumePDF;
+    link.download = "Sufyan-Resume.pdf";
+    link.click();
+  };
+
+  return (
+    <section id="Projects" className="projects">
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        Projects
+      </motion.h2>
+
+      <div className="projects-grid">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.title}
+            className="project-card"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+          >
+            <div className="project-image">
+              <img src={project.image} alt={project.title} />
+            </div>
+
+            <div className="project-content">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+
+              <div className="project-tech">
+                {project.tech.map((tech, i) => (
+                  <span key={i} className="tech-tag">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="github-btn"
+              >
+                <FaGithub /> View on GitHub
+              </a>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* ✅ RESUME BUTTON
+      <div className="resume-section">
+        <button className="resume-btn" onClick={downloadResume}>
+          <FaFileAlt />
+          Download Resume
+        </button>
+      </div> */}
+    </section>
+  );
+}
