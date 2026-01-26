@@ -12,7 +12,7 @@ export default function Projects() {
       image:
         "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop",
       tech: ["React", "CSS", "JavaScript"],
-      github: "https://github.com/Sufyan5423/Typing-Speed",
+      github: "https://github.com/Sufyan2126/MyPortfolio",
     },
     {
       title: "Expense Tracker",
@@ -21,7 +21,7 @@ export default function Projects() {
       image:
         "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=250&fit=crop",
       tech: ["Node.js", "MySQL", "Express"],
-      github: "https://github.com/Sufyan5423/Expense-Tracker",
+      github: "https://github.com/Sufyan2126/MyPortfolio",
     },
     {
       title: "Portfolio Dashboard",
@@ -30,7 +30,7 @@ export default function Projects() {
       image:
         "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop",
       tech: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/Sufyan5423/Portfolio",
+      github: "https://github.com/Sufyan2126/MyPortfolio",
     },
     {
       title: "Business Dashboard",
@@ -39,7 +39,7 @@ export default function Projects() {
       image:
         "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
       tech: ["React", "Charts"],
-      github: "#",
+      github: "https://github.com/Sufyan2126/MyPortfolio",
     },
     {
       title: "Learning Tracker",
@@ -48,7 +48,7 @@ export default function Projects() {
       image:
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop",
       tech: ["React", "UI/UX"],
-      github: "#",
+      github: "https://github.com/Sufyan2126/MyPortfolio",
     },
   ];
 
