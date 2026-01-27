@@ -18,7 +18,7 @@ export default function Contact() {
         <div className="social-links">
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/sufyan-qazi-12a9222b9/"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
@@ -29,7 +29,7 @@ export default function Contact() {
 
           {/* GitHub */}
           <a
-            href="https://github.com/yourprofile"
+            href="https://github.com/Sufyan2126"
             target="_blank"
             rel="noopener noreferrer"
             className="social-link"
