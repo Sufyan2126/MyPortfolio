@@ -120,12 +120,6 @@
   display: grid;
   gap: 18px;
 }
-.success-msg {
-  margin-top: 12px;
-  color: #000000;
-  font-weight: 800;
-  text-align: center;
-}
 
 /* INPUTS */
 .email-input,
