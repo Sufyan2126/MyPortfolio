@@ -41,7 +41,7 @@ export default function Contact() {
           {/* Resume Download */}
           <a
             href={resumePDF}
-            download="Sufyan-Resume.pdf"
+            download="resume.pdf"
             className="social-link"
             aria-label="Download Resume"
           >

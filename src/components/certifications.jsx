@@ -1,60 +1,61 @@
-import { FaPaperPlane, FaDownload, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaDownload,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 import "../styles/getInTouch.css";
 
-export default function GetInTouch() {
+export default function Certifications() {
   return (
-    <section id="contact" className="contact-section">
-
+    <section id="certifications" className="contact-section">
       <h1 className="contact-heading">Get In Touch</h1>
 
-      <section className="get-in-touch">
-        <div className="container two-column">
+      <div className="contact-icons-wrapper">
+        <a
+          href="https://github.com/yourusername"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-icon"
+          aria-label="GitHub"
+        >
+          <FaGithub />
+          <span>GitHub</span>
+        </a>
 
-          {/* LEFT SIDE */}
-          <div className="left-boxes">
+        <a
+          href="https://www.linkedin.com/in/sufyan-qazi-12a9222b9/"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-icon"
+          aria-label="LinkedIn"
+        >
+          <FaLinkedin />
+          <span>LinkedIn</span>
+        </a>
 
-            {/* EMAIL BOX */}
-            <div className="info-box">
-              <h2>Let's Connect</h2>
-              <p className="email-text">
-                <FaEnvelope className="info-icon" /> sufyan@example.com
-              </p>
-              <p className="location-text">
-                <FaMapMarkerAlt className="info-icon" /> Thane, Mumbai
-              </p>
-            </div>
+        <a
+          href="/assests/resume.pdf"
+          download
+          className="contact-icon"
+          aria-label="Resume"
+        >
+          <FaDownload />
+          <span>Resume</span>
+        </a>
 
-            {/* RESUME BOX */}
-            <div className="info-box resume-box">
-              <h2>
-                Resume
-                <a href="/resume.pdf" download className="resume-icon">
-                  <FaDownload />
-                </a>
-              </h2>
-            </div>
+       <a
+  href="https://www.google.com/maps/place/Thane,+Mumbai"
+  target="_blank"
+  rel="noreferrer"
+  className="contact-icon"
+  aria-label="Location"
+>
+  <FaMapMarkerAlt />
+  <span>Location</span>
+</a>
 
-          </div>
-
-          {/* RIGHT SIDE */}
-          <div className="right-form">
-            <h2>Send A Message</h2>
-            <p>Fill in the form below and I’ll get back to you.</p>
-
-            <div className="form-grid">
-              <input type="text" placeholder="Your Name" className="email-input" />
-              <input type="email" placeholder="Your Email" className="email-input" />
-              <textarea placeholder="Your Message" className="message-box"></textarea>
-
-              <button className="send-btn full-btn">
-                <FaPaperPlane /> Send Message
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
+      </div>
     </section>
   );
 }
