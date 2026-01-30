@@ -5,6 +5,8 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import "../styles/getInTouch.css";
+import resume from "../assets/resume.pdf";
+
 
 export default function Certifications() {
   return (
@@ -35,14 +37,15 @@ export default function Certifications() {
         </a>
 
         <a
-          href="/assests/resume.pdf"
-          download
-          className="contact-icon"
-          aria-label="Resume"
-        >
-          <FaDownload />
-          <span>Resume</span>
-        </a>
+  href={resume}
+  download="resume.pdf"
+  className="contact-icon"
+  aria-label="Resume"
+>
+  <FaDownload />
+  <span>Resume</span>
+</a>
+
 
        <a
   href="https://www.google.com/maps/place/Thane,+Mumbai"
