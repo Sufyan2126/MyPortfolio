@@ -76,6 +76,7 @@ export default function Projects() {
             className="project-card"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
           >
             <div className="project-image">

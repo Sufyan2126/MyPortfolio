@@ -5,12 +5,15 @@
   left: 0;
   width: 100%;
   height: 80px;
-  background: white;
+  background: rgba(0, 0, 0, 0.2); /* Semi-transparent black */
+  backdrop-filter: blur(var(--backdrop-blur));
+  -webkit-backdrop-filter: blur(var(--backdrop-blur));
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
   z-index: 1000;
+  border-bottom: 1px solid var(--glass-border);
 }
 
 /* LOGO */
@@ -18,6 +21,10 @@
   cursor: pointer;
   font-size: 35px;
   font-weight: 1000;
+  color: var(--text-primary);
+  background: linear-gradient(90deg, #fff, var(--accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* MENU (DESKTOP) */
@@ -33,11 +40,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  transition: color 0.3s ease;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
 }
 
 .menu li:hover {
-  color: #555;
+  color: var(--accent-blue);
+  text-shadow: 0 0 10px var(--accent-blue);
 }
 
 /* ICONS */
@@ -55,8 +64,9 @@
 .hamburger span {
   width: 25px;
   height: 3px;
-  background: black;
+  background: var(--text-primary);
   margin: 4px 0;
+  transition: 0.3s;
 }
 
 /* MOBILE */
@@ -70,13 +80,15 @@
     top: 70px;
     left: 0;
     width: 100%;
-    background: white;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: center;
     gap: 20px;
     padding: 20px 0;
     transform: translateY(-150%);
     transition: transform 0.3s ease-in-out;
+    border-bottom: 1px solid var(--glass-border);
   }
 
   .menu.show {

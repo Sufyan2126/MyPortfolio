@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: transparent;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -25,28 +25,33 @@
 
 .hero-left h1 {
   margin: 0 0 12px 0;
+  color: var(--text-primary);
 }
 
 .hero-left h2 {
   margin-top: 12px;
   font-size: 1.7rem;
   font-weight: 500;
-  color: #000;
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .cursor {
   animation: blink 1s infinite;
   margin-left: 4px;
+  color: var(--accent-purple);
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-left p {
   margin-top: 16px;
   font-size: 1.05rem;
-  color: #555;
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
@@ -63,7 +68,8 @@
   height: 360px;
   border-radius: 50%;
   overflow: hidden;
-  border: 8px solid #fff;
+  border: 4px solid var(--accent-blue);
+  box-shadow: 0 0 30px rgba(0, 191, 255, 0.4);
   position: relative;
   z-index: 3;
 }
@@ -89,14 +95,18 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 4px solid rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(189, 52, 254, 0.3);
+  /* Purple rings */
   animation: pulse 4s infinite ease-in-out;
   z-index: 1;
+  box-shadow: 0 0 15px rgba(189, 52, 254, 0.2);
 }
 
 .ring-2 {
   animation-delay: 1.3s;
   transform: scale(1.15);
+  border-color: rgba(0, 191, 255, 0.3);
+  /* Blue ring */
 }
 
 .ring-3 {
@@ -109,6 +119,7 @@
     opacity: 0.6;
     transform: scale(1);
   }
+
   100% {
     opacity: 0;
     transform: scale(1.5);
@@ -119,26 +130,49 @@
 .dot {
   position: absolute;
   font-size: 18px;
-  opacity: 0.7;
+  opacity: 0.8;
   animation: rotateDots 12s linear infinite;
   z-index: 2;
+  color: var(--accent-purple);
+  text-shadow: 0 0 8px var(--accent-purple);
 }
 
-.d1 { top: -12px; left: 50%; transform: translateX(-50%); }
-.d2 { right: -12px; top: 50%; transform: translateY(-50%); }
-.d3 { bottom: -12px; left: 50%; transform: translateX(-50%); }
+.d1 {
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.d2 {
+  right: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.d3 {
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
 @keyframes rotateDots {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
+
 .emoji.hand-wave {
   display: inline-block;
-  transform-origin: 70% 70%; /* move the pivot closer to the wrist */
+  transform-origin: 70% 70%;
 }
 
 /* TABLET */
 @media (max-width: 1024px) {
+
   .profile-circle,
   .profile-radiation {
     width: 240px;
@@ -167,6 +201,7 @@
 
 /* SMALL MOBILE */
 @media (max-width: 480px) {
+
   .profile-circle,
   .profile-radiation {
     width: 280px;

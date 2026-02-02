@@ -2,6 +2,7 @@
 .contact-section {
   padding: 80px 20px;
   text-align: center;
+  background: transparent;
 }
 
 /* HEADING */
@@ -9,7 +10,8 @@
   font-size: 2.6rem;
   font-weight: 800;
   margin-bottom: 40px;
-  color: #111;
+  color: var(--text-primary);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 /* ICON WRAPPER */
@@ -25,8 +27,10 @@
   width: 150px;
   height: 150px;
   border-radius: 20px;
-  background: #fff;
-  color: #000;
+  background: var(--glass-bg);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
   text-decoration: none;
 
   display: flex;
@@ -37,18 +41,29 @@
 
   font-size: 2.5rem;
   transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* LABEL */
 .contact-icon span {
   font-size: 1rem;
   font-weight: 600;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
 }
 
 /* HOVER EFFECT */
 .contact-icon:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+  /* Slightly brighter glass */
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 20px rgba(189, 52, 254, 0.3);
+  color: var(--accent-purple);
+}
+
+.contact-icon:hover span {
+  color: var(--text-primary);
 }
 
 /* MOBILE */

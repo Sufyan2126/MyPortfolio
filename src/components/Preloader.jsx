@@ -2,23 +2,24 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "../styles/preloader.css";
 
-export default function Preloader() {
+export default function Preloader({ onComplete }) {
   const loaderRef = useRef(null);
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (count < 100) {
-      const timer = setTimeout(() => setCount(count + 1), 18);
+      const timer = setTimeout(() => setCount(count + 1), 20); // Slightly slower to ensure ~2s total
       return () => clearTimeout(timer);
     } else {
+      // Animation finished, fade out
       gsap.to(loaderRef.current, {
         opacity: 0,
-        duration: 0.8,
+        duration: 0.5,
         ease: "power2.out",
-        pointerEvents: "none"
+        onComplete: onComplete // Call parent to unmount
       });
     }
-  }, [count]);
+  }, [count, onComplete]);
 
   return (
     <div ref={loaderRef} className="preloader">

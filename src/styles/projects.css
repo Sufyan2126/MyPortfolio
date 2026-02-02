@@ -9,7 +9,9 @@
   font-size: 2.5rem;
   margin-bottom: 30px;
   font-weight: 700;
-  color: #111;
+  color: var(--text-primary);
+  text-shadow: 0 0 20px rgba(189, 52, 254, 0.5);
+  /* Purple glow */
 }
 
 /* 🎯 CONTROLLED GRID */
@@ -22,11 +24,13 @@
 /* Each card spans 2 columns */
 .project-card {
   grid-column: span 2;
-  background: #fff;
+  background: var(--glass-bg);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
@@ -34,6 +38,8 @@
 
 .project-card:hover {
   transform: translateY(-6px);
+  border-color: var(--accent-purple);
+  box-shadow: 0 0 20px rgba(189, 52, 254, 0.2);
 }
 
 /* 🔥 CENTER THE LAST TWO CARDS */
@@ -65,12 +71,13 @@
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 8px;
+  color: var(--text-primary);
 }
 
 .project-content p {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 0.95rem;
-  line-height: 1;
+  line-height: 1.4;
 }
 
 .project-tech {
@@ -81,11 +88,13 @@
 }
 
 .tech-tag {
-  background: #f1f1f1;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--accent-blue);
   padding: 4px 12px;
   border-radius: 14px;
   font-size: 0.8rem;
   font-weight: 600;
+  border: 1px solid rgba(0, 191, 255, 0.3);
 }
 
 .github-btn {
@@ -93,10 +102,12 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
-  margin: 16px auto 0;   /* 👈 centers the button */
+  margin: 16px auto 0;
+  /* 👈 centers the button */
   padding: 8px 16px;
-  background: #000;
-  color: #fff;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--text-primary);
   border-radius: 20px;
   font-size: 0.8rem;
   text-decoration: none;
@@ -106,7 +117,9 @@
 
 .github-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  background: var(--text-primary);
+  color: #000;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
 
@@ -133,37 +146,10 @@
     grid-template-columns: 1fr;
   }
 }
-/* Resume Button */
+
+/* Resume Button (if present) */
 .resume-section {
   margin-top: 50px;
   display: flex;
   justify-content: center;
-}
-
-.resume-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 26px;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.resume-btn:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .resume-btn {
-    padding: 14px 32px;
-    font-size: 1rem;
-  }
 }

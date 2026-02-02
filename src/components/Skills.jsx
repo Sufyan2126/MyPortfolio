@@ -1,5 +1,6 @@
 // Skills.jsx
 import { useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/skills.css";
@@ -41,9 +42,21 @@ export default function Skills() {
     <section id="Skills" className="skills">
       <h2>Skills</h2>
 
-      <div className="skill-list">
+      <motion.div
+        className="skill-list"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, staggerChildren: 0.1 }}
+      >
         {skills.map((skill, index) => (
-          <div className="skill-item" key={skill.name}>
+          <motion.div
+            className="skill-item"
+            key={skill.name}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 }
+            }}
+          >
             {/* Skill Name + Percent */}
             <div className="skill-header">
               <span className="skill-name">{skill.name}</span>
@@ -58,9 +71,9 @@ export default function Skills() {
                 ref={(el) => (skillRefs.current[index] = el)}
               />
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
