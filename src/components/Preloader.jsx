@@ -8,15 +8,16 @@ export default function Preloader({ onComplete }) {
 
   useEffect(() => {
     if (count < 100) {
-      const timer = setTimeout(() => setCount(count + 1), 20); // Slightly slower to ensure ~2s total
+      const timer = setTimeout(() => setCount(count + 1), 20);
       return () => clearTimeout(timer);
     } else {
-      // Animation finished, fade out
+      // Exit Animation
       gsap.to(loaderRef.current, {
         opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
-        onComplete: onComplete // Call parent to unmount
+        y: -50,
+        duration: 0.8,
+        ease: "power3.inOut",
+        onComplete: onComplete
       });
     }
   }, [count, onComplete]);

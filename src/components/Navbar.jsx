@@ -8,6 +8,7 @@ import {
   FaTools,
   FaProjectDiagram,
   FaEnvelope,
+  FaCertificate,
 } from "react-icons/fa";
 import "../styles/navbar.css";
 
@@ -41,28 +42,32 @@ export default function Navbar() {
       </div>
 
       {/* Menu */}
-    <ul className={`menu ${open ? "show" : ""}`}>
-  <li onClick={() => handleClick("Hero")}>
-    <FaHome className="nav-icon" /> Home
-  </li>
-  <li onClick={() => handleClick("About")}>
-    <FaUser className="nav-icon" /> About
-  </li>
-  <li onClick={() => handleClick("Education")}>
-  <FaGraduationCap className="nav-icon" /> Education
-</li>
+      <ul className={`menu ${open ? "show" : ""}`}>
+        <li onClick={() => handleClick("Hero")}>
+          <FaHome className="nav-icon" /> Home
+        </li>
+        <li onClick={() => handleClick("About")}>
+          <FaUser className="nav-icon" /> About
+        </li>
+        <li onClick={() => handleClick("Education")}>
+          <FaGraduationCap className="nav-icon" /> Education
+        </li>
 
-  <li onClick={() => handleClick("Skills")}>
-    <FaTools className="nav-icon" /> Skills
-  </li>
-  <li onClick={() => handleClick("Projects")}>
-    <FaProjectDiagram className="nav-icon" /> Projects
-  </li>
- 
-  <li onClick={() => handleClick("certifications")}>
-    <FaEnvelope className="nav-icon" /> Contact
-  </li>
-</ul>
+        <li onClick={() => handleClick("Skills")}>
+          <FaTools className="nav-icon" /> Skills
+        </li>
+        <li onClick={() => handleClick("Projects")}>
+          <FaProjectDiagram className="nav-icon" /> Projects
+        </li>
+
+        <li onClick={() => handleClick("certifications")}>
+          <FaCertificate className="nav-icon" /> Certifications
+        </li>
+
+        <li onClick={() => handleClick("getInTouch")}>
+          <FaEnvelope className="nav-icon" /> Contact
+        </li>
+      </ul>
 
     </motion.nav>
   );

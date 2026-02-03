@@ -8,7 +8,9 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
+import GetInTouch from "./components/getInTouch";
 import Certifications from "./components/certifications";
+import SectionSeparator from "./components/SectionSeparator";
 import Preloader from "./components/Preloader";
 
 export default function App() {
@@ -30,11 +32,19 @@ export default function App() {
         <div>
           <Navbar />
           <Hero />
+          <SectionSeparator />
           <About />
+          <SectionSeparator />
           <Education />
+          <SectionSeparator />
           <Skills />
+          <SectionSeparator />
           <Projects />
+          <SectionSeparator />
           <Certifications />
+          <SectionSeparator />
+          <GetInTouch />
+          <SectionSeparator />
           <Contact />
         </div>
       )}
