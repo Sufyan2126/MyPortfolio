@@ -11,8 +11,8 @@ export default function Projects() {
         "React.js and CSS based application with real-time speed and accuracy tracking.",
       image:
         "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop",
-      tech: ["React", "CSS", "JavaScript"],
-      github: "https://github.com/Sufyan2126/MyPortfolio",
+      tech: ["ReactJS", "CSS", "MYSQL"],
+      github: "https://github.com/Sufyan2126/typing-speed-test",
     },
     {
       title: "Expense Tracker",
@@ -20,8 +20,8 @@ export default function Projects() {
         "Expense tracking app with authentication using React, Node.js, and MySQL.",
       image:
         "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=250&fit=crop",
-      tech: ["Node.js", "MySQL", "Express"],
-      github: "https://github.com/Sufyan2126/MyPortfolio",
+      tech: ["ReactJS", "CSS", "NodeJS"],
+      github: "https://github.com/Sufyan2126/expense-tracker-web/",
     },
     {
       title: "Portfolio Dashboard",
@@ -30,10 +30,10 @@ export default function Projects() {
       image:
         "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop",
       tech: ["HTML", "CSS", "JavaScript"],
-      github: "https://github.com/Sufyan2126/MyPortfolio",
+      github: "https://github.com/Sufyan2126/developer-portfolio",
     },
     {
-      title: "Business Dashboard",
+      title: "LoopSnake",
       description:
         "Analytics dashboard with charts and structured data presentation.",
       image:
@@ -42,12 +42,12 @@ export default function Projects() {
       github: "https://github.com/Sufyan2126/MyPortfolio",
     },
     {
-      title: "Learning Tracker",
+      title: "MySchool Portal",
       description:
-        "Track skills, learning progress, and milestones.",
+        "Information, Campus Life, and Testimonials.",
       image:
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop",
-      tech: ["React", "UI/UX"],
+      tech: ["Tyescript", "TailwindCSS", "UI/UX"],
       github: "https://github.com/Sufyan2126/MyPortfolio",
     },
   ];
