@@ -10,8 +10,8 @@
   margin-bottom: 30px;
   font-weight: 700;
   color: var(--text-primary);
-  text-shadow: 0 0 20px rgba(189, 52, 254, 0.5);
-  /* Purple glow */
+  text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+  /* Blue glow */
 }
 
 /* 🎯 CONTROLLED GRID */

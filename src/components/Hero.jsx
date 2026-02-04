@@ -78,14 +78,14 @@ export default function Hero() {
               >
                 Hey there
               </motion.span>
-             <motion.span
-  className="emoji hand-wave"
-  style={{ fontSize: "20px", marginLeft: "6px", display: "inline-block", transformOrigin: "70% 70%" }}
-  animate={{ rotate: [0, 20, -10, 15, 0] }}
-  transition={{ duration: 2, repeat: Infinity }}
->
-  👋
-</motion.span>
+              <motion.span
+                className="emoji hand-wave"
+                style={{ fontSize: "20px", marginLeft: "6px", display: "inline-block", transformOrigin: "70% 70%" }}
+                animate={{ rotate: [0, 20, -10, 15, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                👋
+              </motion.span>
 
             </div>
 
@@ -112,13 +112,13 @@ export default function Hero() {
             <span className="ring ring-1"></span>
             <span className="ring ring-2"></span>
             <span className="ring ring-3"></span>
-            
+
 
             {/* floating icons */}
             <span className="dot d1"></span>
             <span className="dot d2"></span>
             <span className="dot d3"></span>
-            
+
 
             <div className="profile-circle">
               <img src={profileImg} alt="Sufyan" />

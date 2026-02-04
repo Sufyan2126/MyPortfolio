@@ -21,15 +21,15 @@ export default function About() {
       {/* L-shape wrapping ONLY content */}
       <div className="about-wrapper">
         <div className="about-content">
-        <p>
-  I'm an{" "}
-  <span className="highlight">aspiring NetSuite Consultant</span> and{" "}
-  <span className="highlight">Business Analyst</span> focused on expanding my expertise in{" "}
-  <span className="highlight">NetSuite</span>. I have learned to create{" "}
-  <span className="highlight">Sales Orders</span>, use{" "}
-  <span className="highlight">Saved Searches</span>, import/export data via{" "}
-  <span className="highlight">CSV</span>, and manage other NetSuite functionalities, and I am now learning more advanced features and business processes.
-</p>
+          <p>
+            I'm an{" "}
+            <span className="highlight">aspiring NetSuite Consultant</span> and{" "}
+            <span className="highlight">Business Analyst</span> focused on expanding my expertise in{" "}
+            <span className="highlight">NetSuite</span>. I have learned to create{" "}
+            <span className="highlight">Sales Orders</span>, use{" "}
+            <span className="highlight">Saved Searches</span>, import/export data via{" "}
+            <span className="highlight">CSV</span>, and manage other NetSuite functionalities, and I am now learning more advanced features and business processes.
+          </p>
 
 
           <p>

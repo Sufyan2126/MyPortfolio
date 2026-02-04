@@ -15,17 +15,6 @@ export default function GetInTouch() {
 
       <div className="contact-icons-wrapper">
         <a
-          href="https://github.com/Sufyan2126"
-          target="_blank"
-          rel="noreferrer"
-          className="contact-icon"
-          aria-label="GitHub"
-        >
-          <FaGithub />
-          <span>GitHub</span>
-        </a>
-
-        <a
           href="https://www.linkedin.com/in/sufyan-qazi-12a9222b9/"
           target="_blank"
           rel="noreferrer"
@@ -34,6 +23,17 @@ export default function GetInTouch() {
         >
           <FaLinkedin />
           <span>LinkedIn</span>
+        </a>
+
+        <a
+          href="https://github.com/Sufyan2126"
+          target="_blank"
+          rel="noreferrer"
+          className="contact-icon"
+          aria-label="GitHub"
+        >
+          <FaGithub />
+          <span>GitHub</span>
         </a>
 
         <a
