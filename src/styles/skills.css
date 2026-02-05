@@ -7,23 +7,9 @@
 }
 
 /* Background Accents */
-.skills-bg-accent-1 {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 50%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.2), transparent);
-}
 
-.skills-bg-accent-2 {
-  position: absolute;
-  top: 33%;
-  right: 0;
-  width: 33%;
-  height: 1px;
-  background: linear-gradient(-90deg, transparent, rgba(189, 52, 254, 0.2), transparent);
-}
+
+
 
 /* Heading */
 .skills-header {

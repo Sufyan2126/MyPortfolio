@@ -98,9 +98,7 @@ const Skills = () => {
       ref={sectionRef}
       className="skills"
     >
-      {/* Background accents */}
-      <div className="skills-bg-accent-1" />
-      <div className="skills-bg-accent-2" />
+
 
       <div className="container" style={{ margin: '0 auto', maxWidth: '1200px', padding: '0 20px' }}>
         <div className="skills-header">

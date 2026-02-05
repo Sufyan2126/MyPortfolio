@@ -1,17 +1,18 @@
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, useState, Suspense, lazy } from "react";
 import Background3D from "./components/Background3D";
-
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Education from "./components/Education";
-import GetInTouch from "./components/getInTouch";
-import Certifications from "./components/certifications";
-import SectionSeparator from "./components/SectionSeparator";
 import Preloader from "./components/Preloader";
+import SectionSeparator from "./components/SectionSeparator";
+
+// Lazy load below-the-fold components
+const About = lazy(() => import("./components/About"));
+const Skills = lazy(() => import("./components/Skills"));
+const Projects = lazy(() => import("./components/Projects"));
+const Contact = lazy(() => import("./components/Contact"));
+const Education = lazy(() => import("./components/Education"));
+const GetInTouch = lazy(() => import("./components/getInTouch"));
+const Certifications = lazy(() => import("./components/certifications"));
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -33,19 +34,22 @@ export default function App() {
           <Navbar />
           <Hero />
           <SectionSeparator />
-          <About />
-          <SectionSeparator />
-          <Education />
-          <SectionSeparator />
-          <Skills />
-          <SectionSeparator />
-          <Projects />
-          <SectionSeparator />
-          <Certifications />
-          <SectionSeparator />
-          <GetInTouch />
-          <SectionSeparator />
-          <Contact />
+
+          <Suspense fallback={<div className="h-screen w-full flex items-center justify-center text-white/50">Loading...</div>}>
+            <About />
+            <SectionSeparator />
+            <Education />
+            <SectionSeparator />
+            <Skills />
+            <SectionSeparator />
+            <Projects />
+            <SectionSeparator />
+            <Certifications />
+            <SectionSeparator />
+            <GetInTouch />
+            <SectionSeparator />
+            <Contact />
+          </Suspense>
         </div>
       )}
     </>
