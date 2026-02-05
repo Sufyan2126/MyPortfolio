@@ -1,27 +1,72 @@
 .skills {
-  padding: 60px 20px;
+  padding: 80px 20px;
   width: 100%;
   background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Accents */
+.skills-bg-accent-1 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.2), transparent);
+}
+
+.skills-bg-accent-2 {
+  position: absolute;
+  top: 33%;
+  right: 0;
+  width: 33%;
+  height: 1px;
+  background: linear-gradient(-90deg, transparent, rgba(189, 52, 254, 0.2), transparent);
 }
 
 /* Heading */
-.skills h2 {
+.skills-header {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  font-weight: 700;
-  color: var(--text-primary);
-  text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
-  /* Blue glow */
+  margin-bottom: 64px;
 }
 
-/* Skill List */
-.skill-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 60%;
+.skills-subtitle {
+  display: inline-block;
+  color: var(--accent-blue);
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Skill Grid */
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 900px;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Skill Item */
@@ -29,76 +74,63 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  background: var(--glass-bg);
-  padding: 15px;
-  border-radius: 12px;
-  border: 1px solid var(--glass-border);
-  transition: transform 0.3s ease;
+  /* background: var(--glass-bg); */
+  /* Removed background to match user snippet style more closely or can keep if needed */
+  padding: 10px;
+  border-radius: 8px;
+  opacity: 0;
+  /* Initial state for animation */
 }
 
-.skill-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateX(5px);
+.skill-item:hover .skill-name {
+  color: var(--accent-blue);
 }
 
 /* Name + Percent Row */
-.skill-header {
+.skill-header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 8px;
 }
 
 .skill-name {
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .skill-percent {
-  font-weight: 600;
-  color: var(--accent-purple);
-  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
 }
 
-/* Progress Bar */
-.skill-bar {
-  width: 100%;
+/* Progress Bar Container */
+.skill-track {
+  position: relative;
   height: 12px;
+  border-radius: 9999px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
   overflow: hidden;
 }
 
-.skill-fill {
-  width: 0%;
+/* Actual Progress Bar */
+.skill-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(189, 52, 254, 0.5);
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
 }
 
-/* Hover Effect */
-.skill-item:hover .skill-fill {
-  filter: brightness(1.2);
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .skills h2 {
-    font-size: 2rem;
-  }
-
-  .skill-list {
-    width: 90%;
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .skills h2 {
-    font-size: 1.8rem;
-  }
-
-  .skill-header {
-    font-size: 0.9rem;
-  }
+.skill-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+  filter: blur(4px);
+  opacity: 0.5;
 }

@@ -11,7 +11,7 @@ import resume from "../assets/resume.pdf";
 export default function GetInTouch() {
   return (
     <section id="getInTouch" className="contact-section">
-      <h1 className="contact-heading">Get In Touch</h1>
+      <h1 className="contact-heading">Get In <span className="text-gradient">Touch</span></h1>
 
       <div className="contact-icons-wrapper">
         <a

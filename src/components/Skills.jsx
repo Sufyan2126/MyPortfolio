@@ -1,79 +1,142 @@
-// Skills.jsx
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../styles/skills.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Skills() {
-  const skillRefs = useRef([]);
+const skills = [
+  { name: 'ReactJS', level: 95 },
+  { name: 'PowerBI', level: 85 },
+  { name: 'SQL', level: 80 },
+  { name: 'JavaScript', level: 90 },
+  { name: 'SuiteScript', level: 75 },
+  { name: 'TailwindCSS', level: 92 },
+];
 
-  const skills = [
-    { name: "React", level: "70%" },
-    { name: "Power BI", level: "85%" },
-    { name: "JavaScript", level: "80%" },
-    { name: "SQL", level: "85%" },
-    { name: "Python", level: "80%" },
-    { name: "CSS", level: "90%" },
-  ];
+const Skills = () => {
+  const sectionRef = useRef(null);
+  const skillsRef = useRef(null);
 
   useEffect(() => {
-    skillRefs.current.forEach((el) => {
-      gsap.fromTo(
-        el,
-        { width: "0%" },
-        {
-          width: el.dataset.level,
-          duration: 1.5,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "restart pause resume reset",
-          },
+    const ctx = gsap.context(() => {
+      // Animate skill items and their progress bars
+      const items = skillsRef.current?.querySelectorAll('.skill-item');
+
+      items?.forEach((item, index) => {
+        if (index >= skills.length) return;
+
+        const level = skills[index].level;
+
+        // Actually my CSS structure is .skill-track > .skill-bar (the fill)
+        // Let's ensure the selector matches the markup below.
+
+        const bar = item.querySelector('.skill-bar');
+        const glow = item.querySelector('.skill-glow');
+
+        // Animate progress bars
+        if (bar) {
+          gsap.fromTo(
+            bar,
+            { width: '0%' },
+            {
+              width: `${level}%`,
+              duration: 1.5,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: item,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse',
+              },
+            }
+          );
         }
-      );
-    });
+
+        if (glow) {
+          gsap.fromTo(
+            glow,
+            { width: '0%' },
+            {
+              width: `${level}%`,
+              duration: 1.5,
+              ease: 'power3.out',
+              scrollTrigger: {
+                trigger: item,
+                start: 'top 85%',
+                toggleActions: 'play none none reverse',
+              },
+            }
+          );
+        }
+
+        // Animate skill item entrance
+        gsap.fromTo(
+          item,
+          { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.6,
+            delay: index * 0.1,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: skillsRef.current, // Trigger when grid enters
+              start: 'top 80%',
+              toggleActions: 'play none none reverse',
+            },
+          }
+        );
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
   }, []);
 
   return (
-    <section id="Skills" className="skills">
-      <h2>Skills</h2>
+    <section
+      id="Skills"
+      ref={sectionRef}
+      className="skills"
+    >
+      {/* Background accents */}
+      <div className="skills-bg-accent-1" />
+      <div className="skills-bg-accent-2" />
 
-      <motion.div
-        className="skill-list"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, staggerChildren: 0.1 }}
-      >
-        {skills.map((skill, index) => (
-          <motion.div
-            className="skill-item"
-            key={skill.name}
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 }
-            }}
-          >
-            {/* Skill Name + Percent */}
-            <div className="skill-header">
-              <span className="skill-name">{skill.name}</span>
-              <span className="skill-percent">{skill.level}</span>
-            </div>
+      <div className="container" style={{ margin: '0 auto', maxWidth: '1200px', padding: '0 20px' }}>
+        <div className="skills-header">
+          <h2>
+            <span className="text-gradient">Skills</span>
+          </h2>
+        </div>
 
-            {/* Skill Bar */}
-            <div className="skill-bar">
-              <div
-                className="skill-fill"
-                data-level={skill.level}
-                ref={(el) => (skillRefs.current[index] = el)}
-              />
+        <div ref={skillsRef} className="skill-grid">
+          {skills.map((skill) => (
+            <div key={skill.name} className="skill-item group">
+              <div className="skill-header-row">
+                <span className="skill-name">
+                  {skill.name}
+                </span>
+                <span className="skill-percent">
+                  {skill.level}%
+                </span>
+              </div>
+              <div className="skill-track">
+                {/* Glow effect */}
+                <div
+                  className="skill-glow"
+                />
+                <div
+                  className="skill-bar"
+                />
+              </div>
             </div>
-          </motion.div>
-        ))}
-      </motion.div>
+          ))}
+        </div>
+
+
+      </div>
     </section>
   );
-}
+};
+
+export default Skills;

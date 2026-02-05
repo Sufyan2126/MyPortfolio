@@ -11,7 +11,7 @@ export default function Projects() {
         "React.js and CSS based application with real-time speed and accuracy tracking.",
       image:
         "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop",
-      tech: ["ReactJS", "CSS", "MYSQL"],
+      tech: ["ReactJS", "MYSQL", "NodeJS", "CSS"],
       github: "https://github.com/Sufyan2126/typing-speed-test",
     },
     {
@@ -66,7 +66,7 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Projects
+        <span className="text-gradient">Projects</span>
       </motion.h2>
 
       <div className="projects-grid">

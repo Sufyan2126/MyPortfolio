@@ -107,18 +107,24 @@ export default function Hero() {
 
         {/* RIGHT */}
         <motion.div className="hero-right" variants={itemVariants}>
-          <div className="profile-radiation">
-            {/* radiation rings */}
-            <span className="ring ring-1"></span>
-            <span className="ring ring-2"></span>
-            <span className="ring ring-3"></span>
+          <div className="profile-orbit-container">
+            {/* Orbit Circles */}
+            <div className="hero-orbit-circle h-orbit-2" />
 
-
-            {/* floating icons */}
-            <span className="dot d1"></span>
-            <span className="dot d2"></span>
-            <span className="dot d3"></span>
-
+            {/* Orbiting Elements */}
+            {['React', 'Node', 'Next.js', 'TS'].map((tech, index) => (
+              <div
+                key={tech}
+                className="hero-orbiting-tech animate-orbit-desktop"
+                style={{
+                  animationDelay: `${index * -6.25}s`, // 25s / 4 items = 6.25s spacing
+                }}
+              >
+                <div className="hero-tech-icon">
+                  {tech}
+                </div>
+              </div>
+            ))}
 
             <div className="profile-circle">
               <img src={profileImg} alt="Sufyan" />

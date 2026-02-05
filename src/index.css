@@ -55,3 +55,10 @@ a {
   background: var(--accent-purple);
   border-radius: 4px;
 }
+
+.text-gradient {
+  background: linear-gradient(90deg, #ffffff 30%, var(--accent-blue), var(--accent-purple));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
