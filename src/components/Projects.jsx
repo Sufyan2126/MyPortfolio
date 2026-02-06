@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaFileAlt } from "react-icons/fa";
-import resumePDF from "../assets/resume.pdf";
+import { FaGithub } from "react-icons/fa";
 import "../styles/projects.css";
 
 export default function Projects() {
@@ -52,13 +51,6 @@ export default function Projects() {
     },
   ];
 
-  const downloadResume = () => {
-    const link = document.createElement("a");
-    link.href = resumePDF;
-    link.download = "Sufyan-Resume.pdf";
-    link.click();
-  };
-
   return (
     <section id="Projects" className="projects">
       <motion.h2
@@ -107,14 +99,6 @@ export default function Projects() {
           </motion.div>
         ))}
       </div>
-
-      {/* ✅ RESUME BUTTON
-      <div className="resume-section">
-        <button className="resume-btn" onClick={downloadResume}>
-          <FaFileAlt />
-          Download Resume
-        </button>
-      </div> */}
     </section>
   );
 }

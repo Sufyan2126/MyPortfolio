@@ -57,26 +57,36 @@ export default function Certifications() {
         return () => ctx.revert();
     }, []);
 
+    // Throttling ref to prevent excessive GSAP calls
+    const requestRef = useRef(null);
+
     const handleMouseMove = (e, index) => {
         const card = cardsRef.current[index];
         if (!card) return;
 
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left; // x position within the element
-        const y = e.clientY - rect.top; // y position within the element
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+        // If there's already a pending animation frame, skip
+        if (requestRef.current) return;
 
-        const rotateX = ((y - centerY) / centerY) * -10; // Max rotation 10 deg
-        const rotateY = ((x - centerX) / centerX) * 10;
+        requestRef.current = requestAnimationFrame(() => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the element
+            const y = e.clientY - rect.top; // y position within the element
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
 
-        gsap.to(card, {
-            rotationX: rotateX,
-            rotationY: rotateY,
-            transformPerspective: 1000,
-            scale: 1.05,
-            duration: 0.4,
-            ease: "power2.out",
+            const rotateX = ((y - centerY) / centerY) * -10; // Max rotation 10 deg
+            const rotateY = ((x - centerX) / centerX) * 10;
+
+            gsap.to(card, {
+                rotationX: rotateX,
+                rotationY: rotateY,
+                transformPerspective: 1000,
+                scale: 1.05,
+                duration: 0.4,
+                ease: "power2.out",
+            });
+
+            requestRef.current = null; // Reset lock
         });
     };
 

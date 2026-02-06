@@ -35,6 +35,7 @@ function Planet({ position, size, color }) {
   );
 }
 
+// Parallax removed
 export default function Background3D() {
   return (
     <div style={{
@@ -61,7 +62,7 @@ export default function Background3D() {
         <Stars
           radius={300}
           depth={50}
-          count={3000} // Reduced count
+          count={1500} // Reduced for performance
           factor={4}
           saturation={0}
           fade
@@ -70,7 +71,7 @@ export default function Background3D() {
 
         {/* Floating Particles */}
         <Sparkles
-          count={150} // Reduced count
+          count={80} // Reduced for performance
           scale={[10, 10, 10]}
           size={2}
           speed={0.5}
